@@ -2,7 +2,7 @@
   width: 100%;
   margin-top: 80px;
   background-color: #fff8f0;
-  padding: 0 px;
+  padding: 0px;
 
   .banner-cuidados {
     background-image: url('../assets/banner-menores.png');
@@ -30,7 +30,7 @@
 
     @media (max-width: 768px) {
       font-size: 1.2rem;
-      margin-left: 0;
+      margin-left: 0px;
       text-align: center;
     }
   }
@@ -152,7 +152,6 @@
     }
   }
 
-
   .card-requisitos,
   .card,
   .card-info {
@@ -164,7 +163,6 @@
     }
   }
 
-  
   .card-impedimentos,
   .card-aqui {
     margin-right: 40px;
@@ -222,6 +220,115 @@
         left: 70px;
         padding: 8px 10px;
       }
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+   🔥 RESPONSIVIDADE ESPECIAL (100% customizada por mim)
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  .container-menores {
+
+    /* Banner menor */
+    .banner-cuidados {
+      padding: 50px 0;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .titulo-principal {
+      font-size: 34px;
+      text-align: center;
+
+      &::after {
+        width: 200px;
+        margin: 10px auto;
+      }
+    }
+
+    .texto-inicial {
+      font-size: 18px;
+      margin: 0px 20px;
+      text-align: center;
+    }
+
+    /* Cards empilhados */
+    .card-requisitos,
+    .card-impedimentos,
+    .card,
+    .card-aqui,
+    .card-info {
+      flex-direction: column !important;
+      max-width: 90%;
+      margin: 20px auto;
+      padding: 20px 20px;
+      gap: 15px;
+      text-align: left;
+      align-items: center;
+
+      .linha,
+      .line {
+        width: 100%;
+        height: 4px;
+        margin-bottom: 15px;
+      }
+
+      .conteudo h2,
+      .content h2 {
+        justify-content: center;
+      }
+    }
+
+    /* Margens centralizadas */
+    .card-requisitos,
+    .card,
+    .card-info,
+    .card-impedimentos,
+    .card-aqui {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    /* Card de agendamento */
+    .card-agendamento {
+
+      .cardao {
+        width: 100%;
+      }
+
+      .btn {
+        bottom: 70px;
+        padding: 10px 20px;
+        font-size: 15px;
+        margin-top: 10px;
+        position: relative;
+        transform: none !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+  .container-menores {
+
+    .card-requisitos,
+    .card-impedimentos,
+    .card,
+    .card-aqui,
+    .card-info {
+      padding: 15px;
+
+      .conteudo ul li,
+      .content ul li {
+        font-size: 0.9rem;
+      }
+    }
+
+    .titulo-principal {
+      font-size: 28px;
     }
   }
 }

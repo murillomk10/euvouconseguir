@@ -9,7 +9,6 @@
 
   .doar-header {
     width: 100%;
-    max-width: 100%;
     background-color: #bb0a0c;
     color: white;
     padding: 20px;
@@ -30,17 +29,16 @@
   }
 
   .doar-search-bar {
-    display: flex;  
+    display: flex;
     align-items: center;
     background-color: #fff;
     border: 2px solid #f2b3a2;
     border-radius: 12px;
-    padding: px 10px;
+    padding: 4px 10px;
     width: 250px;
     height: 32px;
     box-shadow: 5px 1px 1px rgba(0, 0, 0, 0.05);
     margin: 10px 10px 20px;
-  
 
     .icon {
       color: #e74c3c;
@@ -128,6 +126,60 @@
       tr:last-child td {
         border-bottom: none;
       }
+    }
+  }
+}
+
+
+/* =======================================================
+      🔥 RESPONSIVIDADE — SEM ALTERAR DESKTOP 🔥
+   ======================================================= */
+
+@media (max-width: 768px) {
+  .doar-page {
+    padding-top: 60px;
+
+    .doar-header {
+      text-align: center;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .doar-search-bar {
+      width: 90%;
+      height: auto;
+      padding: 6px 12px;
+    }
+
+    .doar-table-container {
+      margin-left: 0;
+      width: 95%;
+    }
+
+    .doar-table {
+      th, td {
+        font-size: 13px !important;
+        padding: 10px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .doar-page {
+    .doar-header h1 {
+      font-size: 18px;
+    }
+
+    .doar-table th,
+    .doar-table td {
+      font-size: 12px !important;
     }
   }
 }

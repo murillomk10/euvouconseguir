@@ -22,7 +22,7 @@ export default function Navegacao(){
                 <Route path='/cuidados' element={<CuidadosNaDoacao />} />
                 <Route path='/pqdoar' element={<PorQueDoar />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/cadastro' element={<Cadastro />} />
+                <Route path='/register' element={<Cadastro />} />
                 <Route path='/menores' element={<DoacaoParaMenores />} />
                 <Route path='/ondedoar' element={<OndeDoar />} />
                 <Route path='/Passos' element={<PasssosDaDoacao />} />

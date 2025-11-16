@@ -40,7 +40,7 @@ export default function Cabecalho() {
   return (
     <header className={`cabecalho ${isMenuOpen ? "is-open" : ""}`}>
       <div className="cabecalho__logo">
-        <Link to="/" onClick={handleLinkClick}>
+        <Link to="/home" onClick={handleLinkClick}>
           <img src={logo} alt="Logo Guia do Sangue - Voltar para a página inicial" />
         </Link>
       </div>

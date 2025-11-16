@@ -17,7 +17,7 @@ $breakpoint-tablet: 768px;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 5%;
+  padding: 0 ;
   background-color: $color-background;
   display: flex;
   align-items: center;
@@ -31,6 +31,8 @@ $breakpoint-tablet: 768px;
     img {
       width: 80px;
       height: auto;
+      margin-left: 20px;
+      margin-top: 5px;
       transition: transform 0.3s ease;
       &:hover {
         transform: scale(1.05);

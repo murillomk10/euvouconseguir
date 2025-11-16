@@ -4,13 +4,13 @@ import Cabecalho from "../components/Cabecalho";
 import Footer from "../components/Footer";
 
 export default function OndeDoar() {
-  // Lista de locais (poderia vir de um JSON ou API)
+
   const locais = [
     {
       bairro: "Aclimação",
       unidade: "Hospital do Servidor Público Municipal",
       endereco: "R. Castro Alves, 60 - 4º andar - Aclimação",
-      telefone: "(11) 3277-5303",
+      telefone: "(11) 3277-5303", 
       site: "https://www.colsan.org.br",
       siteNome: "colsan.org.br",
     },
@@ -108,12 +108,23 @@ export default function OndeDoar() {
   // Estado do filtro
   const [busca, setBusca] = useState("");
 
-  // Filtragem
-  const locaisFiltrados = locais.filter(
-    (l) =>
-      l.bairro.toLowerCase().includes(busca.toLowerCase()) ||
-      l.unidade.toLowerCase().includes(busca.toLowerCase())
-  );
+  // Normaliza string (remove acentos e deixa minúscula)
+  const normalize = (str = "") =>
+    String(str)
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "")
+      .toLowerCase();
+
+  // Filtragem por bairro, unidade (nome do hospital) ou siteNome
+  const locaisFiltrados = locais.filter((l) => {
+    const q = normalize(busca);
+    if (!q) return true;
+    return (
+      normalize(l.bairro).includes(q) ||
+      normalize(l.unidade).includes(q) ||
+      normalize(l.siteNome).includes(q)
+    );
+  });
 
   return (
     <div className="doar-page">
