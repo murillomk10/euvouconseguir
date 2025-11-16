@@ -1,0 +1,59 @@
+# ------------------------
+# GERAL
+# ------------------------
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Cache / Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.cache/
+.tmp/
+.DS_Store
+Thumbs.db
+
+# IDEs e sistemas
+.vscode/
+.idea/
+*.swp
+
+# ------------------------
+# FRONTEND (React)
+# ------------------------
+/frontend/node_modules
+/frontend/build
+/frontend/.env
+frontend/.next
+frontend/out
+
+# ------------------------
+# BACKEND (Express)
+# ------------------------
+/backend/node_modules
+/backend/.env
+/backend/dist
+/backend/uploads
+/backend/tmp
+
+# ------------------------
+# TESTS
+# ------------------------
+coverage/
+*.test.js
+*.spec.js
+
+# ------------------------
+# Outros
+# ------------------------
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

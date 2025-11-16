@@ -1,0 +1,133 @@
+.doar-page {
+  background-color: #fffaf7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 80px;
+  align-items: center;
+
+  .doar-header {
+    width: 100%;
+    max-width: 100%;
+    background-color: #bb0a0c;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+
+  .doar-search-bar {
+    display: flex;  
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #f2b3a2;
+    border-radius: 12px;
+    padding: px 10px;
+    width: 250px;
+    height: 32px;
+    box-shadow: 5px 1px 1px rgba(0, 0, 0, 0.05);
+    margin: 10px 10px 20px;
+  
+
+    .icon {
+      color: #e74c3c;
+      margin-right: 3px;
+      font-size: 14px;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 13px;
+      color: #333;
+      background: transparent;
+
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+
+    button {
+      background-color: #ff7043;
+      border: none;
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #f4511e;
+      }
+    }
+  }
+
+  .doar-table-container {
+    width: 100%;
+    max-width: 1000px;
+    overflow-x: auto;
+    margin-bottom: 50px;
+    margin-left: 60px;
+
+    .doar-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+
+      th {
+        background-color: #d9d9d9;
+        color: #333;
+        padding: 12px;
+        text-align: left;
+        font-weight: bold;
+        border: 0.5px solid #333;
+      }
+
+      td {
+        padding: 12px;
+        font-size: 14px;
+        border: 0.5px solid #333;
+        vertical-align: top;
+
+        &:first-child {
+          font-weight: bold;
+        }
+
+        a {
+          color: #333;
+          text-decoration: none;
+          word-break: break-word;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+}

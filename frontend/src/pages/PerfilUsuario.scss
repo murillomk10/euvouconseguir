@@ -1,0 +1,236 @@
+.perfil-usuario {
+  min-height: 100vh;
+  background-color: #f5f5f0;
+  display: flex;
+  flex-direction: column;
+
+  .perfil-header {
+    background-color: #2c2855;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+
+      .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      .title {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .btn-voltar {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .perfil-content {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px 20px;
+
+    @media (max-width: 768px) {
+      padding: 20px 16px;
+    }
+  }
+
+  .user-avatar {
+    text-align: center;
+    margin-bottom: 40px;
+
+    svg {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 12px;
+    }
+
+    .user-label {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  .info-section {
+    background-color: #e8f0f8;
+    border-radius: 8px;
+    padding: 0;
+    margin-bottom: 30px;
+
+    .section-title {
+      background-color: #5b9dd4;
+      color: white;
+      margin: 0;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0;
+      padding: 20px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(91, 157, 212, 0.2);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .info-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #003366;
+        margin-bottom: 4px;
+      }
+
+      .info-value {
+        font-size: 14px;
+        color: #333;
+      }
+    }
+  }
+
+  .agendamentos-section {
+    background-color: #e8f0f8;
+    border-radius: 8px;
+    padding: 0;
+    margin-bottom: 40px;
+
+    .section-title {
+      background-color: #5b9dd4;
+      color: white;
+      margin: 0;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .agendamento-em-processo {
+      padding: 20px;
+      border-bottom: 1px solid rgba(91, 157, 212, 0.2);
+
+      .agendamento-status {
+        margin: 0 0 4px 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #e63946;
+      }
+
+      .agendamento-obs {
+        margin: 0 0 16px 0;
+        font-size: 12px;
+        color: #666;
+        font-style: italic;
+      }
+
+      .agendamento-card {
+        background-color: rgba(91, 157, 212, 0.1);
+        border-left: 4px solid #5b9dd4;
+        padding: 12px;
+        border-radius: 4px;
+
+        .agendamento-info {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+
+          .data,
+          .horario {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .agendamentos-realizados {
+      padding: 20px;
+
+      .agendamentos-titulo {
+        margin: 0 0 12px 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #003366;
+      }
+
+      .agendamentos-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .agendamento-item {
+          background-color: rgba(91, 157, 212, 0.1);
+          padding: 10px 12px;
+          border-radius: 4px;
+          display: flex;
+          gap: 12px;
+          align-items: center;
+
+          .data,
+          .horario {
+            font-size: 13px;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+
+  .blood-icon {
+    text-align: center;
+    margin-top: 20px;
+
+    svg {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+  }
+}

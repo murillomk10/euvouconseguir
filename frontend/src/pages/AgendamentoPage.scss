@@ -1,0 +1,110 @@
+.agendamento-container {
+  max-width: 850px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Montserrat', sans-serif;
+
+  h1 {
+    text-align: center;
+    color: #bb0a0c;
+    margin-bottom: 40px;
+  }
+
+  .formulario-agendamento {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .pergunta {
+      background: #f5f8ff;
+      border-left: 5px solid #bb0a0c;
+      padding: 15px 20px;
+      border-radius: 10px;
+
+      p {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      label {
+        margin-right: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .resposta-extra {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        input {
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          padding: 8px;
+          max-width: 350px;
+        }
+      }
+    }
+
+    .termos {
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      input {
+        margin-right: 8px;
+      }
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+
+      .btn-cancelar {
+        background: #ccc;
+        color: #000;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .btn-enviar {
+        background: #bb0a0c;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background: #a50a0b;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 15px;
+
+    .botoes {
+      flex-direction: column;
+      gap: 10px;
+
+      .btn-cancelar, .btn-enviar {
+        width: 100%;
+      }
+    }
+  }
+}
+  

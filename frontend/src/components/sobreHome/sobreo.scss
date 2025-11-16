@@ -1,0 +1,123 @@
+.container-sobre {
+  background: linear-gradient(180deg, #FFF8F0 0%, #FFE3DB 100%);
+  width: 100%;
+  padding: 70px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(244, 67, 54, 0.08);
+    border-radius: 50%;
+    filter: blur(90px);
+    transition: all 0.5s ease;
+  }
+
+  &::before {
+    top: -80px;
+    left: -120px;
+  }
+
+  &::after {
+    bottom: -60px;
+    right: -120px;
+  }
+
+  .cartoes {
+    max-width: 900px;
+    text-align: center;
+    animation: fadeIn 1.3s ease-in-out;
+    z-index: 2;
+    padding: 40px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(183, 28, 28, 0.15);
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: #B71C1C;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-family: 'Arial', sans-serif;
+      font-size: 20px;
+      color: #111;
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto 40px auto;
+      opacity: 0.95;
+    }
+
+    .botao-doar {
+      background: linear-gradient(90deg, #D32F2F, #B71C1C);
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
+
+      a{
+        text-decoration: none;
+        color: #ffff;
+      }
+
+      &:hover {
+        transform: scale(1.07);
+        box-shadow: 0 8px 25px rgba(183, 28, 28, 0.5);
+      }
+
+      &:active {
+        transform: scale(0.96);
+      }
+    }
+  }
+}
+
+// ➤ Animação suave de entrada
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 🔹 Responsivo
+@media (max-width: 768px) {
+  .cartoes {
+    padding: 30px 15px;
+
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .botao-doar {
+      font-size: 16px;
+      padding: 12px 28px;
+    }
+  }
+}

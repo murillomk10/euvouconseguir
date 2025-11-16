@@ -1,0 +1,227 @@
+.container-requesitos {
+  width: 100%;
+  margin-top: 80px;
+  background-color: #fff8f0;
+  padding: 0 px;
+
+  .banner-cuidados {
+    background-image: url('../assets/banner-requisitos.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 100px 0px;
+    position: relative;
+    color: #000000;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+  }
+
+  .texto-inicial {
+    font-size: 28px;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    margin: 0px 70px 0px;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+
+  .titulo-principal {
+    font-size: 2.7rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    color: #BF0603;
+    top: 5px;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 400px;
+      margin: 10px 100px 10px;
+      height: 8px;
+      background: #241e4e;
+      border-radius: 10px;
+    }
+  }
+
+  .card-requisitos,
+  .card-impedimentos,
+  .card,
+  .card-aqui,
+  .card-info {
+    display: flex;
+    align-items: stretch;
+    padding: 30px 40px;
+    border-radius: 12px;
+    max-width: 800px;
+    background: #fff8f0;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    gap: 25px;
+    margin: 40px 0;
+
+    .linha,
+    .line {
+      width: 6px;
+      background-color: #c30000;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .conteudo,
+    .content {
+      flex: 1;
+
+      h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #1c163a;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .emoji {
+          font-size: 1.5rem;
+        }
+      }
+
+      .aviso,
+      .alerta {
+        font-family: "Arial", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #c30000;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin: 0;
+
+        li {
+          font-family: "Arial", sans-serif;
+          font-size: 1rem;
+          line-height: 1.6;
+          color: #1c163a;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 25px 20px;
+      align-items: center;
+      text-align: left;
+      margin: 20px auto;
+
+      .linha,
+      .line {
+        width: 100%;
+        height: 4px;
+        margin-bottom: 20px;
+      }
+
+      .conteudo h2,
+      .content h2 {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      padding: 20px 15px;
+
+      .conteudo ul li,
+      .content ul li {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+
+  .card-requisitos,
+  .card,
+  .card-info {
+    margin-left: 40px;
+    margin-right: auto;
+
+    @media (max-width: 768px) {
+      margin: 20px auto;
+    }
+  }
+
+  
+  .card-impedimentos,
+  .card-aqui {
+    margin-right: 40px;
+    margin-left: auto;
+
+    @media (max-width: 768px) {
+      margin: 20px auto;
+    }
+  }
+
+  .card-agendamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+
+    .cardao {
+      width: 600px;
+      max-width: 90%;
+      height: auto;
+    }
+
+    .btn {
+      position: relative;
+      bottom: 70px;
+      left: 120px;
+      background-color: #e63946;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #c72e3b;
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      @media (max-width: 768px) {
+        bottom: 70px;
+        padding: 10px 20px;
+        font-size: 15px;
+      }
+
+      @media (max-width: 500px) {
+        bottom: 50px;
+        font-size: 14px;
+        left: 70px;
+        padding: 8px 10px;
+      }
+    }
+  }
+}

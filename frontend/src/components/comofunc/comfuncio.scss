@@ -1,0 +1,116 @@
+.container-como {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: #f9fafb;
+  text-align: center;
+  overflow: hidden;
+
+  .titulo-principalcomo {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #b91c1c;
+    margin-bottom: 3rem;
+    position: relative;
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 120px;
+      height: 8px;
+      background: #b91c1c;
+      margin: 0.5rem auto 0;
+      border-radius: 10px;
+    }
+  }
+
+  .Cartoes {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    .cartao {
+      background: #fff;
+      width: 300px;
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 0.8s ease forwards;
+
+      &:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 28px rgba(185, 28, 28, 0.18);
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+        transition: filter 0.3s ease, transform 0.3s ease;
+      }
+
+      &:hover img {
+        filter: drop-shadow(0 0 8px rgba(185, 28, 28, 0.4))
+                brightness(1.15);
+        transform: scale(1.05);
+      }
+
+      h2 {
+        font-size: 1.65rem;
+        font-family: 'Montserrat', sans-serif;
+        color: #000000;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        font-family: 'inter', sans-serif;
+        color: #000000;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .Cartoes {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cartao {
+      width: 90%;
+      max-width: 350px;
+    }
+  }
+}

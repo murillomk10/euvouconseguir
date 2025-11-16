@@ -1,0 +1,137 @@
+.Container-herosection {
+  background-image: url('../../assets/bannerhero.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-position: center; 
+  height: 400px;
+  width: 100%;
+  margin-top: 80px;
+
+  .conteudo-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 90px;
+    padding-top: 110px;
+
+    padding-right: 20px;
+
+    .titulo-principalok {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-stretch: extra-expanded;
+      font-size: 50px;
+      margin: 0px 0px 10px ;
+
+      @media (max-width: 768px) {
+        font-size: 36px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 28px;
+    
+        font-stretch: normal;
+      }
+    }
+
+    .texto-principal {
+      margin-bottom: 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+
+
+      @media (max-width: 480px) {
+        font-size: 16px;
+      }
+    }
+
+    .botoes {
+      display: flex;
+      gap: 10px;
+
+      .btn-vermelho {
+        background-color: #BF0603;
+        padding: 10px 28px;
+        border: none;
+        border-radius: 12px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: .3s ease;
+        box-shadow: 0 4px 10px rgba(230, 57, 70, 0.4);
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+
+        &:hover {
+          background-color: #BF0603; 
+          transform: translateY(-3px);
+          box-shadow: 0 6px 16px rgba(199, 47, 59, 0.5);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 6px rgba(199, 47, 59, 0.4);
+        }
+
+        &:focus-within {
+          outline: 2px solid #fff;
+          outline-offset: 3px;
+        }
+      }
+
+      @media (max-width: 480px) {
+
+        flex-direction: column;
+
+        width: 100%; 
+        
+        .btn-vermelho {
+          width: 100%;
+        }
+      }
+    }
+
+  
+    @media (max-width: 768px) {
+      margin-left: 40px; /* Reduz a margem */
+      padding-top: 80px;  /* Reduz o padding */
+    }
+
+ 
+    @media (max-width: 480px) {
+      align-items: center; 
+      text-align: center;  
+      margin-left: 0;      
+     
+      padding: 60px 20px 0 20px; 
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    height: 350px; 
+    margin-top: 70px;
+  }
+
+
+  @media (max-width: 480px) {
+  
+    height: auto; 
+    
+    padding-bottom: 40px; 
+    margin-top: 60px; 
+  }
+} 
