@@ -1,12 +1,11 @@
 import './Footer.scss';
 import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
-import Logo from '../assets/logo.png'; // ajuste o caminho da sua logo
+import Logo from '../assets/logo.png'; 
 
 export default function Footer() {
   return (
     <footer className="footer">
       
-      {/* Onda no topo */}
       <div className="wave"></div>
 
       <div className="footer-container">
@@ -22,10 +21,10 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Links Rápidos</h4>
           <ul>
-            <li><a href="/">Início</a></li>
-            <li><a href="/sobre">Sobre</a></li>
-            <li><a href="/locais">Locais de Doação</a></li>
-            <li><a href="/contato">Contato</a></li>
+            <li><a href="/home">Início</a></li>
+            <li><a href="/QuemSomos">Sobre</a></li>
+            <li><a href="/home#locais">Locais de Doação</a></li>
+            <li><a href="/home#contato">Contato</a></li>
           </ul>
         </div>
 

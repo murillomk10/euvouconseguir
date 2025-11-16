@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router";
 import "./login.scss";
+import Cabecalho2 from "../../components/Cabecalho2";
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -37,7 +38,7 @@ export default function Login() {
       localStorage.setItem("userName", data.user.name);
 
       navigate("/home");
-      window.location.reload(); // recarrega o cabeçalho com o nome
+      window.location.reload();
     } catch (err) {
       console.error("Erro no login:", err);
       setError("Erro de conexão com o servidor.");
@@ -48,6 +49,7 @@ export default function Login() {
 
   return (
     <div className="login-container">
+      <Cabecalho2 />
 
       <h2>Entrar na conta</h2>
       <form onSubmit={handleLogin}>

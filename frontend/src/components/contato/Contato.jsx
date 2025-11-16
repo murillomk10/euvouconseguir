@@ -3,7 +3,7 @@ import "./Contato.scss";
 
 export default function Contato() {
   return (
-    <section className="contato-container">
+    <section id="contato" className="contato-container">
       <div className="contato-content">
 
         <div className="contato-info">

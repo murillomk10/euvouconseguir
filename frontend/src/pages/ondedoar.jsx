@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./OndeDoar.scss";
-import Cabecalho from "../components/Cabecalho";
+import Cabecalho from "../components/cabecalho";
 import Footer from "../components/Footer";
 
 export default function OndeDoar() {

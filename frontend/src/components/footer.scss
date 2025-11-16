@@ -1,9 +1,8 @@
-// Footer styles with SCSS variables, accessible focus, reduced-motion support
 $footer-bg: #241E4E;
 $text-color: #fff;
 $accent: #ff4b4b;
 $footer-max-width: 1300px;
-$wave-fill-hex: str-slice(#{$footer-bg}, 2); // remove leading '#'
+$wave-fill-hex: str-slice(#{$footer-bg}, 2);
 
 * {
   margin: 0;
@@ -30,7 +29,6 @@ html, body {
     left: 0;
     width: 100%;
     height: 45px;
-    /* SVG uses the hex without the leading '#', URL-encoded as %23 */
     background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%23#{$wave-fill-hex}' fill-opacity='1' d='M0,256L60,245.3C120,235,240,213,360,192C480,171,600,149,720,144C840,139,960,149,1080,170.7C1200,192,1320,224,1380,240L1440,256V320H0V256Z'></path></svg>");
     background-size: cover;
   }

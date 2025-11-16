@@ -153,7 +153,7 @@ export default function LocaisDoacao() {
   }
 
   return (
-    <div className="container-locais">
+    <div id='locais'className="container-locais">
       <h1 className="titulo-locais">
         Locais de Doação <MapPin className="icon" />
       </h1>
