@@ -25,6 +25,7 @@ export default function Footer() {
             <li><a href="/QuemSomos">Sobre</a></li>
             <li><a href="/home#locais">Locais de Doação</a></li>
             <li><a href="/home#contato">Contato</a></li>
+            <li><a href="/">Sobre a empresa</a></li>
           </ul>
         </div>
 

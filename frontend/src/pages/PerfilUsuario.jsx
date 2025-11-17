@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './PerfilUsuario.scss';
+import Cabecalho from '../components/cabecalho';
 
 export default function PerfilUsuario() {
   const [usuario] = useState({
@@ -32,16 +33,7 @@ export default function PerfilUsuario() {
 
   return (
     <div className="perfil-usuario">
-      <div className="perfil-header">
-        <div className="logo-section">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23003366'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23fff'/%3E%3Cpath d='M 30 65 Q 30 55 50 55 Q 70 55 70 65' fill='%23fff'/%3E%3C/svg%3E" alt="Logo" className="logo" />
-          <span className="title">Guia do Sangue</span>
-        </div>
-        <button className="btn-voltar">
-          Voltar <span>→</span>
-        </button>
-      </div>
-
+    <Cabecalho2 />
       <div className="perfil-content">
         <div className="user-avatar">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">

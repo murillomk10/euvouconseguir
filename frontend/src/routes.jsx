@@ -4,13 +4,13 @@ import Sobre from "./pages/SobreNos";
 import RequisitosParaDoar from "./pages/RequesitosParaDoar";
 import CuidadosNaDoacao from "./pages/cuidadosdoacao";
 import PorQueDoar from "./pages/PorQueDoar";
-import Login from "./pages/login/Login";
-import Cadastro from "./pages/cadastro/Cadastro";
 import DoacaoParaMenores from "./pages/DoacaoParaMenores";
 import OndeDoar from "./pages/ondedoar";
 import PasssosDaDoacao from "./pages/PassosDoacao";
 import Agendamento from "./pages/Agendamentopage";
 import PerfilUsuario from "./pages/perfilUsuario";
+import Admin from "./pages/admin";
+import Login from './pages/login/Login'
 
 export default function Navegacao(){
     return(
@@ -22,12 +22,12 @@ export default function Navegacao(){
                 <Route path='/cuidados' element={<CuidadosNaDoacao />} />
                 <Route path='/pqdoar' element={<PorQueDoar />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Cadastro />} />
                 <Route path='/menores' element={<DoacaoParaMenores />} />
                 <Route path='/ondedoar' element={<OndeDoar />} />
                 <Route path='/Passos' element={<PasssosDaDoacao />} />
                 <Route path='/agendamento' element={<Agendamento />} />
                 <Route path='/perfil' element={<PerfilUsuario />} />
+                <Route path='/admin' element={<Admin />} />
             </Routes>
         </BrowserRouter>
     )
