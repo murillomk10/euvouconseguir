@@ -31,14 +31,21 @@ export default function Login() {
             });
 
 
-            if (email === "adm@gmail.com" && senha === "adm") {
-                setMensagem("Login realizado com sucesso!");
-                return setTimeout(() => navigate("/admin"), 800);
-            }
-
             if (resposta.data) {
+                // Salvar dados do usuário no localStorage
+                localStorage.setItem("userId", resposta.data.id);
+                localStorage.setItem("userName", resposta.data.nome || resposta.data.email);
+                localStorage.setItem("userEmail", resposta.data.email);
+                localStorage.setItem("isAdmin", resposta.data.isAdmin ? "true" : "false");
+                
                 setMensagem("Login realizado com sucesso!");
-                return setTimeout(() => navigate("/home"), 800);
+                
+                // Redirecionar admin para página de admin, usuário comum para home
+                if (resposta.data.isAdmin) {
+                    return setTimeout(() => navigate("/admin"), 800);
+                } else {
+                    return setTimeout(() => navigate("/home"), 800);
+                }
             }
 
         } catch (err) {

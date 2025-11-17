@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { cadastrarUsuario, autenticarUsuario, listarUsuarios } from "../repository/LoginRepository.js";
+import { cadastrarUsuario, autenticarUsuario, listarUsuarios, buscarUsuarioPorId } from "../repository/LoginRepository.js";
 
 const endpoints = Router();
 
@@ -47,6 +47,24 @@ endpoints.get("/usuario", async (req, resp) => {
     } catch (err) {
         console.error(err);
         resp.status(500).send({ erro: "Erro ao listar usuários" });
+    }
+});
+
+// Buscar dados do usuário logado por ID
+endpoints.get("/usuario/:id", async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const usuario = await buscarUsuarioPorId(id);
+
+        if (!usuario) {
+            return resp.status(404).send({ erro: "Usuário não encontrado" });
+        }
+
+        resp.send(usuario);
+
+    } catch (err) {
+        console.error(err);
+        resp.status(500).send({ erro: "Erro ao buscar usuário" });
     }
 });
 

@@ -28,13 +28,30 @@ export async function cadastrarUsuario(usuario) {
 
 // Autenticar usuário (login)
 export async function autenticarUsuario(email, senha) {
+    // Verificar se é admin hardcoded (para compatibilidade)
+    const isAdminHardcoded = email === "adm@gmail.com" && senha === "adm";
+    
+    if (isAdminHardcoded) {
+        return {
+            id: 0,
+            nome: "Administrador",
+            email: "adm@gmail.com",
+            isAdmin: true
+        };
+    }
+
+    // Buscar usuário no banco (incluindo verificação de is_admin)
     const comando = `
-        SELECT id, nome, email
+        SELECT id, nome, email, COALESCE(is_admin, FALSE) as isAdmin
         FROM tb_users
         WHERE email = ? AND senha = MD5(?)
     `;
 
     const [linhas] = await con.query(comando, [email, senha]);
+    if (linhas[0]) {
+        // Converter isAdmin para boolean
+        linhas[0].isAdmin = Boolean(linhas[0].isAdmin);
+    }
     return linhas[0];
 }
 
@@ -46,4 +63,16 @@ export async function listarUsuarios() {
 
     const [linhas] = await con.query(comando);
     return linhas;
+}
+
+// Buscar dados completos do usuário por ID
+export async function buscarUsuarioPorId(id) {
+    const comando = `
+        SELECT id, nome, email, cpf, rg, telefone, data_nascimento, nm_mae, endereco, sexo, tp_sanguineo
+        FROM tb_users
+        WHERE id = ?
+    `;
+
+    const [linhas] = await con.query(comando, [id]);
+    return linhas[0];
 }

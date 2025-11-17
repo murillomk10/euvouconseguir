@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link, useNavigate } from "react-router";
 import logo from "../assets/logo.png";
+import perfilIcon from "../assets/perfil.svg";
+import perfilAdminIcon from "../assets/perfilAdmin.svg";
 import "./cabecalho.scss";
 
 export default function Cabecalho() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   const [userName, setUserName] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
 
-  // Carrega o nome do usuário salvo no localStorage
+  // Carrega o nome do usuário e status de admin salvo no localStorage
   useEffect(() => {
     const storedName = localStorage.getItem("userName");
+    const storedIsAdmin = localStorage.getItem("isAdmin") === "true";
     if (storedName) setUserName(storedName);
+    setIsAdmin(storedIsAdmin);
   }, []);
 
   const toggleMenu = () => {
@@ -33,7 +38,11 @@ export default function Cabecalho() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userName");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("isAdmin");
     setUserName(null);
+    setIsAdmin(false);
     navigate("/login");
   };
 
@@ -74,11 +83,22 @@ export default function Cabecalho() {
           <li>
             <NavLink to="/ondedoar" onClick={handleLinkClick}>Onde Doar</NavLink>
           </li>
+          {isAdmin && (
+            <li>
+              <NavLink to="/admin" onClick={handleLinkClick}>Admin</NavLink>
+            </li>
+          )}
         </ul>
 
         {userName ? (
           <div className="cabecalho__user">
-            <span>Olá, {userName}!</span>
+            <Link to="/perfil" onClick={handleLinkClick}>
+              <img 
+                src={isAdmin ? perfilAdminIcon : perfilIcon} 
+                alt="Perfil" 
+              />
+              <span>Olá, {userName}!</span>
+            </Link>
             <button onClick={handleLogout} className="logout-btn">
               Sair
             </button>

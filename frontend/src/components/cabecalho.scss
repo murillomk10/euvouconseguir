@@ -1,5 +1,5 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 $color-primary: #241E4E;
 $color-accent: #BF0603;
@@ -273,27 +273,80 @@ $breakpoint-tablet: 768px;
   }
 }
 
-.cabecalho__usuario {
+.cabecalho__user {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 12px;
+  margin-right: 20px;
 
-  .user-text {
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: $color-text;
+    font-family: $font-main;
     font-weight: 500;
-    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    span {
+      font-family: $font-main;
+      font-weight: 500;
+    }
   }
 
   .logout-btn {
-    background-color: #d32f2f;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: $color-text;
+    font-family: $font-main;
+    font-weight: 500;
+    border: 2px solid $color-accent;
     border-radius: 8px;
+    padding: 8px 16px;
     cursor: pointer;
-    transition: background 0.2s;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 
     &:hover {
-      background-color: #b71c1c;
+      background-color: $color-accent;
+      color: $color-text;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(191, 6, 3, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .cabecalho__user {
+    margin-right: 0;
+    margin-top: 20px;
+    
+    a {
+      font-size: 1.2rem;
+    }
+
+    .logout-btn {
+      font-size: 1rem;
+      padding: 10px 20px;
     }
   }
 }
