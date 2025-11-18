@@ -11,6 +11,7 @@ import Agendamento from "./pages/Agendamentopage";
 import PerfilUsuario from "./pages/perfilUsuario";
 import Admin from "./pages/admin";
 import Login from './pages/login/Login'
+import Empresa from "./pages/empresa/empresa";
 
 export default function Navegacao(){
     return(
@@ -28,6 +29,7 @@ export default function Navegacao(){
                 <Route path='/agendamento' element={<Agendamento />} />
                 <Route path='/perfil' element={<PerfilUsuario />} />
                 <Route path='/admin' element={<Admin />} />
+                <Route path='/' element={<Empresa />} />
             </Routes>
         </BrowserRouter>
     )
